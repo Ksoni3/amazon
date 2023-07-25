@@ -149,7 +149,7 @@ const Header = () => {
         {/* signin */}
         {userInfo ? (
           <div className="hidden md:flex items-center px-2 border border-transparent hover:border-white cursor-pointer duration-300 h-[80%] gap-1">
-            <img
+            <Image
               src={userInfo.image}
               alt="userImage"
               className="w-8 h-8 rounded-full object-cover"
