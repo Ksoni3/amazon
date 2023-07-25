@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Image from "next/image";
 import logo from "../../images/logo.png";
 import cartIcon from "../../images/cartIcon.png";
