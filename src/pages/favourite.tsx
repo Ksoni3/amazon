@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { StateProps, StoreProduct } from "../../type";
 import FavoriteProduct from "@/components/FavouriteProduct";
-import ResetFavoriteItems from "@/components/ResetFavoriteItems";
+import ResetFavouriteItems from "@/components/ResetFavouriteItems";
 import Link from "next/link";
 
 const FavouritePage = () => {
@@ -24,7 +24,7 @@ const FavouritePage = () => {
                 <FavoriteProduct item={item} />
               </div>
             ))}
-            <ResetFavoriteItems />
+            <ResetFavouriteItems />
           </div>
         </div>
       ) : (
