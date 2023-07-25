@@ -1,4 +1,4 @@
-import { resetfavouriteData } from "@/store/nextSlice";
+import { resetFavouriteData } from "@/store/nextSlice";
 import { useDispatch } from "react-redux";
 
 const ResetFavouriteItems = () => {
@@ -8,7 +8,7 @@ const ResetFavouriteItems = () => {
       "Are you sure to reset your items from the cart?"
     );
     if (confirmReset) {
-      dispatch(resetfavouriteData());
+      dispatch(resetFavouriteData());
     }
   };
   return (

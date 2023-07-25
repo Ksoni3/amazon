@@ -3,14 +3,14 @@ import { StoreProduct } from "../../type";
 
 interface NextState {
   productData: StoreProduct[];
-  FavouriteData: StoreProduct[];
+  favouriteData: StoreProduct[];
   allProducts: StoreProduct[];
   userInfo: null | string;
 }
 
 const initialState: NextState = {
   productData: [],
-  FavouriteData: [],
+  favouriteData: [],
   allProducts: [],
   userInfo: null,
 };
@@ -30,13 +30,13 @@ export const nextSlice = createSlice({
       }
     },
     addToFavourite: (state, action) => {
-      const existingProduct = state.FavouriteData.find(
+      const existingProduct = state.favouriteData.find(
         (item: StoreProduct) => item._id === action.payload._id
       );
       if (existingProduct) {
         existingProduct.quantity += action.payload.quantity;
       } else {
-        state.FavouriteData.push(action.payload);
+        state.favouriteData.push(action.payload);
       }
     },
     increaseQuantity: (state, action) => {
@@ -61,7 +61,7 @@ export const nextSlice = createSlice({
       );
     },
     deleteFavourite: (state, action) => {
-      state.FavouriteData = state.FavouriteData.filter(
+      state.favouriteData = state.favouriteData.filter(
         (item) => item._id !== action.payload
       );
     },
@@ -70,7 +70,7 @@ export const nextSlice = createSlice({
       state.productData = [];
     },
     resetFavouriteData: (state) => {
-      state.FavouriteData = [];
+      state.favouriteData = [];
     },
 
     addUser: (state, action) => {
