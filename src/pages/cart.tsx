@@ -10,7 +10,7 @@ const CartPage = () => {
   const { productData } = useSelector((state: StateProps) => state.next);
   return (
     <div className=" w-[95%] mx-auto flex flex-col lg:flex-row gap-10  py-4">
-      {productData.length > 0 ? (
+      {productData?.length > 0 ? (
         <>
           <div className="bg-white p-4 rounded-lg">
             <div className="flex items-center justify-between border-b-[1px] border-b-gray-400 pb-1">

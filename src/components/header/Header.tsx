@@ -108,7 +108,7 @@ const Header = () => {
           {/* ========== Searchfield ========== */}
           {searchQuery && (
             <div className="absolute left-0 top-12 w-full mx-auto max-h-96 bg-gray-200 rounded-lg overflow-y-scroll cursor-pointer text-black">
-              {filteredProducts.length > 0 ? (
+              {filteredProducts?.length > 0 ? (
                 <>
                   {searchQuery &&
                     filteredProducts.map((item: StoreProduct) => (
@@ -181,9 +181,9 @@ const Header = () => {
         >
           <p>Marked</p>
           <p className="text-white font-bold">& Favourite</p>
-          {FavouriteData.length > 0 && (
+          {FavouriteData?.length > 0 && (
             <span className="absolute right-2 top-2 w-4 h-4 border-[1px] border-gray-400 flex items-center justify-center text-xs text-amazon_yellow">
-              {FavouriteData.length}
+              {FavouriteData?.length}
             </span>
           )}
         </Link>
@@ -199,7 +199,7 @@ const Header = () => {
           />
           <p className="text-xs text-white font-bold ">Cart</p>
           <span className="absolute text-amazon_yellow text-sm top-1 left-[13px] lg:left-[20px] font-semibold">
-            {productData ? productData.length : 0}
+            {productData ? productData?.length : 0}
           </span>
         </Link>
       </div>
@@ -220,7 +220,7 @@ const Header = () => {
         {/* ========== Searchfield ========== */}
         {searchQuery && (
           <div className=" absolute left-1/2 translate-x-[-50%] top-10 w-[95%]  bg-gray-200 overflow-y-scroll cursor-pointer text-black z-50  ">
-            {filteredProducts.length > 0 ? (
+            {filteredProducts?.length > 0 ? (
               <>
                 {searchQuery &&
                   filteredProducts.map((item: StoreProduct) => (
