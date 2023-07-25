@@ -13,7 +13,7 @@ export default function Home({ productData }: Props) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(setAllProducts({ allProducts: productData }));
-  }, [productData]);
+  }, [productData, dispatch]);
   return (
     <main>
       <div className="max-w-screen-2xl mx-auto">

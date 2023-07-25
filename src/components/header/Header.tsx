@@ -38,7 +38,7 @@ const Header = () => {
         })
       );
     }
-  }, [session]);
+  }, [session, dispatch]);
 
   //mobile menu
 
