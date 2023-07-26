@@ -13,6 +13,7 @@ interface Props {
   title: string;
   _id: number;
 }
+
 type Item = {
   item: Props;
 };

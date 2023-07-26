@@ -8,6 +8,7 @@ import { removeUser } from "@/store/nextSlice";
 const BottomHeader = () => {
   const dispatch = useDispatch();
   const { userInfo } = useSelector((state: StateProps) => state.next);
+
   const handleSignOut = () => {
     signOut();
     dispatch(removeUser());

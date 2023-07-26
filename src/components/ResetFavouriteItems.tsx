@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 
 const ResetFavouriteItems = () => {
   const dispatch = useDispatch();
+
   const handleResetCart = () => {
     const confirmReset = window.confirm(
       "Are you sure to reset your items from the cart?"

@@ -13,12 +13,14 @@ const DynamicPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
   const dispatch = useDispatch();
+
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);
     setProduct(router.query);
   }, [router.query]);
+
   return (
     <div className="max-w-screen-xl mx-auto px-4 py-4 md:py-10">
       {isLoading ? (

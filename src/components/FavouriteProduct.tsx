@@ -3,6 +3,7 @@ import React from "react";
 import FormattedPrice from "./FormattedPrice";
 import { useDispatch } from "react-redux";
 import { addToCart, deleteFavourite } from "@/store/nextSlice";
+
 interface Item {
   _id: number;
   brand: string;
@@ -15,6 +16,7 @@ interface Item {
   title: string;
   quantity: number;
 }
+
 interface cartProductProps {
   item: Item;
 }

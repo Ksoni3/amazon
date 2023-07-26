@@ -9,6 +9,7 @@ import {
   deleteProduct,
   increaseQuantity,
 } from "@/store/nextSlice";
+
 interface Item {
   brand: string;
   category: string;
@@ -21,6 +22,7 @@ interface Item {
   _id: number;
   quantity: number;
 }
+
 interface cartProductsProps {
   item: Item;
 }
