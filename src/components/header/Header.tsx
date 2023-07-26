@@ -19,7 +19,7 @@ import SearchProducts from "../SearchProducts";
 const Header = () => {
   const { data: session } = useSession();
   const [allData, setAllData] = useState([]);
-  const { productData, FavouriteData, userInfo, allProducts } = useSelector(
+  const { productData, favouriteData, userInfo, allProducts } = useSelector(
     (state: StateProps) => state.next
   );
 
@@ -67,6 +67,7 @@ const Header = () => {
     <div className=" min-h-16 lg:h-20 bg-amazon_blue text-lightText  top-0 z-50 pb-2 lg:pb-0 ">
       <div className="h-16 lg:h-20  mx-auto flex items-center justify-between gap-1 lg:gap-3  w-[95%] relative  ">
         {/* logo */}
+
         <div className="flex  items-center gap-3">
           <div className="lg:hidden text-xl" onClick={handleMobileMenu}>
             <FiMenu />
@@ -84,6 +85,7 @@ const Header = () => {
         </div>
 
         {/* delivery */}
+
         <div className="px-2 border border-transparent hover:border-white cursor-pointer duration-300 items-center justify-center h-[70%] hidden xl:inline-flex gap-1">
           <SlLocationPin />
           <div className="text-xs">
@@ -93,6 +95,7 @@ const Header = () => {
         </div>
 
         {/* serchbar */}
+
         <div className="flex-1 h-10 hidden md:inline-flex items-center justify-between relative z-50 ">
           <input
             onChange={handleSearch}
@@ -107,7 +110,7 @@ const Header = () => {
 
           {/* ========== Searchfield ========== */}
           {searchQuery && (
-            <div className="absolute left-0 top-12 w-full mx-auto max-h-96 bg-gray-200 rounded-lg overflow-y-scroll cursor-pointer text-black">
+            <div className="absolute left-0 top-12 max-h-[80vh] bg-gray-200 rounded-lg overflow-y-scroll cursor-pointer text-black ">
               {filteredProducts?.length > 0 ? (
                 <>
                   {searchQuery &&
@@ -153,6 +156,8 @@ const Header = () => {
             <Image
               src={userInfo.image}
               alt="userImage"
+              height={300}
+              width={300}
               className="w-8 h-8 rounded-full object-cover"
             />
             <div className="text-xs text-gray-100 flex flex-col justify-between">
@@ -174,31 +179,31 @@ const Header = () => {
             </p>
           </div>
         )}
-        {/* favourite */}
         <Link
           href={"/favourite"}
           className="text-xs text-gray-100 hidden md:flex flex-col justify-center px-2 border border-transparent hover:border-white cursor-pointer duration-300 h-[70%] relative"
         >
           <p>Marked</p>
           <p className="text-white font-bold">& Favourite</p>
-          {FavouriteData?.length > 0 && (
+          {favouriteData?.length > 0 && (
             <span className="absolute right-2 top-2 w-4 h-4 border-[1px] border-gray-400 flex items-center justify-center text-xs text-amazon_yellow">
-              {FavouriteData?.length}
+              {favouriteData?.length}
             </span>
           )}
         </Link>
+
         {/* cart */}
         <Link
           href={"/cart"}
           className="flex items-center gap-2  border border-transparent hover:border-white cursor-pointer duration-300 h-[70%] relative"
         >
           <Image
-            className="w-auto object-cover h-5 lg:h-7"
+            className="w-auto object-cover h-6 lg:h-7"
             src={cartIcon}
             alt="cartImg"
           />
-          <p className="text-xs text-white font-bold ">Cart</p>
-          <span className="absolute text-amazon_yellow text-sm top-1 left-[13px] lg:left-[20px] font-semibold">
+          <p className="hidden lg:block text-xs text-white font-bold ">Cart</p>
+          <span className="absolute text-amazon_yellow text-sm top-1 left-[16px] lg:left-[20px] font-semibold">
             {productData ? productData?.length : 0}
           </span>
         </Link>
@@ -219,7 +224,7 @@ const Header = () => {
 
         {/* ========== Searchfield ========== */}
         {searchQuery && (
-          <div className=" absolute left-1/2 translate-x-[-50%] top-10 w-[95%]  bg-gray-200 overflow-y-scroll cursor-pointer text-black z-50  ">
+          <div className=" absolute left-1/2 translate-x-[-50%] top-10 w-full  bg-gray-200 overflow-y-scroll cursor-pointer text-black z-50  ">
             {filteredProducts?.length > 0 ? (
               <>
                 {searchQuery &&
@@ -307,6 +312,19 @@ const Header = () => {
             <h3> Prime</h3>
             <h3> Gift Cards</h3>
           </div>
+          <span onClick={() => setShowMobileMenu(false)}>
+            <Link
+              href="/favourite"
+              className="block px-5 text-black font-semibold mt-3"
+            >
+              {` See favourites (${favouriteData.length})`}
+            </Link>
+          </span>
+          {userInfo && (
+            <span className="block px-5 text-black font-semibold mt-3">
+              {`Signed In as: ${userInfo.email}`}
+            </span>
+          )}
         </div>
 
         <div

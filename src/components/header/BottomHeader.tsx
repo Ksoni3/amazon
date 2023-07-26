@@ -14,7 +14,7 @@ const BottomHeader = () => {
   };
 
   return (
-    <div className="h-10 bg-amazon_light text-sm text-white flex items-center py-2 ">
+    <div className="h-10 bg-amazon_light text-base text-white flex items-center py-2 ">
       <div className="w-[95%] mx-auto flex items-center">
         <div className="flex items-center gap-2 flex-nowrap overflow-x-scroll lg:overflow-hidden">
           <p className="flex items-center gap-1 pr-2  border border-transparent hover:border-white cursor-pointer duration-300">

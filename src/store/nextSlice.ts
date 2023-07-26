@@ -97,5 +97,6 @@ export const {
   setAllProducts,
   deleteFavourite,
   resetFavouriteData,
+  
 } = nextSlice.actions;
 export default nextSlice.reducer;

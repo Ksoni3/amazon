@@ -19,14 +19,20 @@ type Item = {
 
 const SearchProducts = ({ item }: Item) => {
   return (
-    <div className="flex items-center gap-4">
-      <Image className="w-24" src={item.image} alt="productImage" />
+    <div className="flex items-center gap-4 py-3 lg:py-0">
+      <Image
+        width={130}
+        height={150}
+        src={item.image}
+        alt="productImage"
+        className="h-[30%] lg:h-24  w-[25%] lg:w-24"
+      />
       <div>
-        <p className="text-xs -mb-1">
+        <p className="hidden lg:block text-xs -mb-1">
           {item.brand}_{item.category}
         </p>
-        <p className="text-lg font-medium">{item.title}</p>
-        <p className="text-xs">{item.description.substring(0, 100)}</p>
+        <p className="text-md lg:text-lg font-medium">{item.title}</p>
+        <p className="text-xs">{item.description.substring(0, 80) + "..."}</p>
         <p className="text-sm flex items-center gap-1">
           price:{" "}
           <span className="font-semibold">
