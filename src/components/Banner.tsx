@@ -3,7 +3,6 @@ import sliderImg_1 from "../images/slider/sliderImg_1.jpg";
 import sliderImg_2 from "../images/slider/sliderImg_2.jpg";
 import sliderImg_3 from "../images/slider/sliderImg_3.jpg";
 import Image from "next/image";
-import BannerCard from "./BannerCard";
 
 const Banner = () => {
   return (
